@@ -1,0 +1,17 @@
+img{
+    height: 100%;
+    width: auto !important;
+    border: 0;
+    padding: 0;
+}
+
+ion-toolbar {
+    --background: #00821e;
+    --color: white;
+}
+
+@media (max-width: 768px) {
+    .titulo {
+      font-size: 1em; /* Reduce el tamaño del texto en pantallas más pequeñas */
+    }
+}   

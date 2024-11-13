@@ -1,0 +1,7 @@
+{
+  "name": "resena_videojuegos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

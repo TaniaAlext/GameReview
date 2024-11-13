@@ -1,0 +1,148 @@
+<ion-app>
+  <!-- Menú lateral -->
+  <ion-menu contentId="main-content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/resenas">
+          <ion-icon name="file-tray-full-outline" slot="start"></ion-icon>
+          Reseñas
+        </ion-item>
+        <ion-item routerLink="/lanzamientos">
+          <ion-icon name="rocket-outline" slot="start"></ion-icon>
+          Lanzamientos
+        </ion-item>
+        <ion-item routerLink="/ranking">
+          <ion-icon name="globe-outline" slot="start"></ion-icon>
+          Ranking
+        </ion-item>
+        <ion-item routerLink="/games-mobile">
+          <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
+          Games Mobiles
+        </ion-item>
+        <ion-item routerLink="/login">
+          <ion-icon name="log-in-outline" slot="start"></ion-icon>
+          Login
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal dentro de un solo ion-content -->
+  <ion-content id="main-content">
+    <!-- Header con botón para abrir el menú -->
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>VideoGame Review</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <!-- Fondo y título principal -->
+    <div class="background-container">
+      <div class="overlay">
+        <h1 class="game-title">VideoGame Review</h1>
+      </div>
+    </div>
+
+<!-- Banners (sin cambios) -->
+<div class="banner-container">
+  <div class="banner" *ngFor="let banner of banners">
+    <img [src]="banner.image" alt="{{ banner.title }}">
+    <div class="banner-info">
+      <h2>{{ banner.title }}</h2>
+      <p>{{ banner.subtitle }}</p>
+      <button *ngIf="banner.link" (click)="navigateTo(banner.link)">Noticias del Juego</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sección Próximamente -->
+<h2>Próximamente</h2>
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" size-md="3" *ngFor="let game of upcomingGames">
+      <ion-card>
+        <img [src]="game.image" alt="{{game.title}}">
+        <ion-card-header>
+          <ion-card-title>{{ game.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="full" (click)="notifyGame(game.title)">Notificar el juego</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+  <!-- Sección de Trailers -->
+<h2>Trailers</h2>
+<ion-grid>
+  <ion-row>     
+    <ion-col size="12" size-md="3">
+      <div class="iframe-container">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/i4qxeouJGB0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </ion-col>
+    <ion-col size="12" size-md="3">
+      <div class="iframe-container">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/I0PNno5jd_0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </ion-col>
+    <ion-col size="12" size-md="3">
+      <div class="iframe-container">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/dadLtfngQH8" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </ion-col>
+    <ion-col size="12" size-md="3">
+      <div class="iframe-container">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/h4FnFgt1lWo" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid> 
+  <!-- Footer -->
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row class="footer-row">
+        <ion-col size="6" size-md="4" class="footer-col">
+          <h3>Sobre Nosotros</h3>
+          <p>VideoGame Review es tu fuente confiable para reseñas de videojuegos, lanzamientos y noticias. ¡Únete a nuestra comunidad!</p>
+        </ion-col>
+        <ion-col size="12" size-md="4" class="footer-col">
+          <h3>Redes Sociales</h3>
+          <ion-list>
+            <ion-item href="https://twitter.com" target="_blank" lines="none">
+              <ion-icon name="logo-twitter" slot="start"></ion-icon>
+              Twitter
+            </ion-item>
+            <ion-item href="https://facebook.com" target="_blank" lines="none">
+              <ion-icon name="logo-facebook" slot="start"></ion-icon>
+              Facebook
+            </ion-item>
+            <ion-item href="https://instagram.com" target="_blank" lines="none">
+              <ion-icon name="logo-instagram" slot="start"></ion-icon>
+              Instagram
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12" size-md="4" class="footer-col">
+          <h3>Contacto</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <div class="footer-bottom">
+    <p>&copy; 2024 VideoGame Review. Todos los derechos reservados.(Y si robas eres Gay👌 o por lo menos publicidad)</p>
+  </div>
+</ion-footer>
+  </ion-content>
+</ion-app>

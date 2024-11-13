@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lanzamientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+    <ion-title>Próximos Juegos</ion-title>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let game of proximosLanzamientos">
+        <ion-card>
+          <img [src]="game.background_image" alt="{{ game.name }}" />
+          <ion-card-header>
+            <ion-card-title>{{ game.name }}</ion-card-title>
+            <ion-card-subtitle>Lanzamiento: {{ game.released }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Rating: {{ game.rating }} / 5</p>
+          </ion-card-content>
+          <ion-button expand="block" color="primary" (click)="notificarJuego(game.name)">
+            Notificar Juego
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

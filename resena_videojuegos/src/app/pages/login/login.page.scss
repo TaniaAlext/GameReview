@@ -1,0 +1,46 @@
+// Imagen de fondo en la pantalla de inicio de sesión
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/assets/img/games.jpg'); // Cambia la ruta a la imagen de fondo
+    background-size: cover;
+    background-position: center;
+    color: white; // Color del texto por defecto
+  }
+  
+  // Contenedor del formulario de inicio de sesión
+  .login-form {
+    background-color: rgba(0, 0, 0, 0.8); // Fondo oscuro semitransparente
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  // Estilo del título
+  .title {
+    text-align: center;
+    color: #4CAF50; // Verde principal para el título
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  // Estilo de los elementos de entrada
+  .input-item {
+    --background: transparent;
+    --color-focused: #4CAF50; // Verde al hacer foco
+    --color: #fff; // Color de texto en blanco
+    --placeholder-color: #b0b0b0; // Color del marcador de posición
+  }
+  
+  // Estilo del botón de inicio de sesión
+  .login-button {
+    --background: #4CAF50; // Fondo verde para el botón
+    --background-hover: #45A049; // Verde oscuro al pasar el mouse
+    --color: #fff; // Texto en blanco
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

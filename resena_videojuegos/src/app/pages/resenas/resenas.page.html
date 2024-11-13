@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reseñas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let resena of resenas">
+        <ion-card style="width: 100%; height: 350px;">
+          <img [src]="resena.imagen" [alt]="resena.titulo" style="width: 100%; height: 150px; object-fit: cover;">
+          <ion-card-header>
+            <ion-card-title class="titulo">{{ resena.titulo }}</ion-card-title>
+            <ion-card-subtitle>{{ resena.subtitulo }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{ resena.contenido }}
+            <ion-button color="medium" expand="full" (click)="verResena(resena.id)">
+              <ion-icon name="game-controller" slot="start"></ion-icon>
+              Ver Reseña
+            </ion-button>
+          </ion-card-content>
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

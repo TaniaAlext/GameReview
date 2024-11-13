@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Panel de Administración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment>
+    <ion-segment-button value="games">
+      <ion-label>Videojuegos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="categories">
+      <ion-label>Categorías</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reviews">
+      <ion-label>Reseñas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Listado de Videojuegos -->
+  <ion-list *ngIf="games.length > 0">
+    <ion-item *ngFor="let game of games">
+      {{ game.name }} ({{ game.genre }})
+    </ion-item>
+  </ion-list>
+
+  <!-- Listado de Categorías -->
+  <ion-list *ngIf="categories.length > 0">
+    <ion-item *ngFor="let category of categories">
+      {{ category.name }}
+    </ion-item>
+  </ion-list>
+
+  <!-- Listado de Reseñas -->
+  <ion-list *ngIf="reviews.length > 0">
+    <ion-item *ngFor="let review of reviews">
+      Juego ID: {{ review.game_id }} - Calificación: {{ review.rating }} - Comentario: {{ review.comment }}
+    </ion-item>
+  </ion-list>
+</ion-content>

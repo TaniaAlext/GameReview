@@ -1,0 +1,60 @@
+ion-card {
+    /* Hacer más pequeña la tarjeta */
+    width: 100%; /* Ajusta el tamaño a lo que prefieras */
+    max-width: 300px; /* Limitar el tamaño máximo */
+    margin: 10px; /* Espaciado entre las tarjetas */
+    padding: 10px; /* Ajusta el padding interno de las tarjetas */
+  }
+  ion-toolbar {
+    --background: #00821e;
+    --color: white;
+  }
+  
+  ion-img {
+    /* Hacer más pequeña la imagen */
+    width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    height: auto; /* Mantener la proporción */
+  }
+  
+  ion-card-title {
+    /* Reducir el tamaño del título */
+    font-size: 1rem; /* Ajusta el tamaño de fuente */
+    margin-bottom: 5px; /* Espacio debajo del título de la tarjeta */
+  }
+  
+  p {
+    /* Reducir el tamaño del texto del precio */
+    font-size: 0.9rem;
+  }
+  
+  ion-button {
+    /* Reducir el tamaño del botón */
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem; /* Ajustar el relleno del botón */
+  }
+  
+  @media (max-width: 768px) {
+    ion-card {
+      max-width: 200px; /* Hacer las tarjetas más pequeñas en pantallas pequeñas */
+    }
+  
+    ion-card-title, p, ion-button {
+      font-size: 0.8rem; /* Reducir aún más los textos y botones en móviles */
+    }
+  }
+  
+  .recommended-section {
+    margin-top: 20px; /* Ajusta el espacio entre secciones */
+  }
+  
+  ion-grid {
+    padding: 0; /* Quitar el padding general de la rejilla */
+  }
+  
+  ion-row {
+    margin: 0; /* Reducir el margen entre las filas */
+  }
+  
+  ion-col {
+    margin-bottom: 10px; /* Ajusta el espacio entre columnas, puedes cambiar 10px a lo que consideres adecuado */
+  }

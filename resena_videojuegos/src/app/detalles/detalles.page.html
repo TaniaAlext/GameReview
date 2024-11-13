@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ juego?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Columna izquierda para las capturas de pantalla e información -->
+      <ion-col size="6">
+        <!-- Información del juego -->
+        <ion-card *ngIf="juego" style="margin-top: 20px;">
+          <ion-card-header>
+            <ion-card-title>{{ juego?.name }}</ion-card-title>
+            <p>Géneros: {{ generos }}</p>
+            <p>Rating: {{ juego?.rating }}</p>
+            <p>Descripción: {{ juego?.description_raw }}</p>
+          </ion-card-header>
+        </ion-card>
+        <!-- Mostrar capturas de pantalla pequeñas -->
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6" *ngFor="let screenshot of screenshots">
+              <ion-img [src]="screenshot.image" style="width: 100%; height: auto; border-radius: 8px;"></ion-img>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      
+      </ion-col>
+
+      <!-- Columna derecha para la imagen de fondo -->
+      <ion-col size="6">
+        <div class="background-image-container">
+          <img *ngIf="juego?.background_image" [src]="juego?.background_image" alt="{{juego?.name }}" 
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

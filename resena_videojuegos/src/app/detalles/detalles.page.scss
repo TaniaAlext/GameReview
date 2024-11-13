@@ -1,0 +1,38 @@
+ion-content {
+    --ion-background-color: #080808; /* Color de fondo suave */
+  }
+  
+  .background-image-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ion-col img {
+    box-shadow: 0 4px 8px rgba(38, 202, 1, 0.89);
+    transition: transform 0.3s ease;
+  }
+  
+  ion-col img:hover {
+    transform: scale(1.05); /* Animación al pasar el mouse */
+  }
+  
+  ion-card {
+    background-color: rgba(78, 177, 32, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(39, 213, 0, 0.764);
+    padding: 10px;
+  }
+  
+  ion-card-title {
+   
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+  
